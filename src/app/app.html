@@ -1,0 +1,9 @@
+<!-- Pasamos la variable reactiva al hijo -->
+<app-saludo [nombre]="nombreUsuario()"></app-saludo>
+
+<div style="text-align: center; margin-top: 10px;">
+  <!-- (click) ejecuta la función que creamos -->
+  <button (click)="cambiarNombre()">
+    Cambiar Nombre
+  </button>
+</div>
