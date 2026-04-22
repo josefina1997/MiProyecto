@@ -1,0 +1,22 @@
+.calculator {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
