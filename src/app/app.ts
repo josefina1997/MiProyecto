@@ -1,21 +1,19 @@
-import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SaludoComponent } from './saludo/saludo';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { SaludoComponent } from './saludo/saludo.component';
 
-
-
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, SaludoComponent],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+@NgModule({
+  declarations: [
+    SaludoComponent,
+    CalculatorComponent,
+  ],
+  imports: [
+    BrowserModule,
+    RouterOutlet,
+    CalculatorComponent,
+  ],
+  bootstrap: [SaludoComponent]
 })
-
-export class App {
-  // Creamos una variable reactiva (signal)
-  nombreUsuario = signal('Usuario Inicial');
-
-  cambiarNombre() {
-    this.nombreUsuario.set('Programador Angular 💻');
-  }
-}
+export class AppModule {}
