@@ -1,0 +1,29 @@
+<button 
+  class="my-button" 
+  (click)="toggleCalculadora()"
+  [style.background-color]="calculadoraVisible ? 'red' : 'green'">
+  {{ calculadoraVisible ? 'Cerrar calculadora' : 'Abrir Calculadora' }}
+</button>
+
+
+<button 
+  class="my-button" 
+  (click)="toggleFormulario()"
+  [style.background-color]="formularioVisible ? 'red' : 'green'">
+  {{ formularioVisible ? 'Cerrar Formulario' : 'Abrir Formulario' }}
+</button>
+
+
+
+<hr>
+
+<!-- Usamos [hidden] para que el espacio de la ruta exista siempre, pero solo se vea cuando debe -->
+<div [hidden]="!calculadoraVisible">
+  <router-outlet></router-outlet>
+</div>
+
+
+<!-- Usamos [hidden] para que el espacio de la ruta exista siempre, pero solo se vea cuando debe -->
+<div [hidden]="!formularioVisible">
+  <router-outlet></router-outlet>
+</div>

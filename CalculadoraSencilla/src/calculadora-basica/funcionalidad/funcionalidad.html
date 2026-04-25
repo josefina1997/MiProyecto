@@ -1,0 +1,59 @@
+<div class="main-container">
+  
+  <div class="calculator">
+    <!-- Pantalla -->
+    <div class="display">
+      <div class="previous-operand">
+        {{ previousOperand() }} {{ operation() }}
+      </div>
+      <div class="current-operand">
+        {{ currentOperand() }}
+      </div>
+    </div>
+
+    <!-- Botones de control -->
+    <button class="span-two color-alt" (click)="clear()">AC</button>
+    <button class="color-alt" (click)="delete()">DEL</button>
+    <button class="color-op" (click)="chooseOperation('÷')">÷</button>
+    
+    <!-- Números -->
+    <button (click)="appendNumber('1')">1</button>
+    <button (click)="appendNumber('2')">2</button>
+    <button (click)="appendNumber('3')">3</button>
+    <button class="color-op" (click)="chooseOperation('×')">×</button>
+    
+    <button (click)="appendNumber('4')">4</button>
+    <button (click)="appendNumber('5')">5</button>
+    <button (click)="appendNumber('6')">6</button>
+    <button class="color-op" (click)="chooseOperation('+')">+</button>
+    
+    <button (click)="appendNumber('7')">7</button>
+    <button (click)="appendNumber('8')">8</button>
+    <button (click)="appendNumber('9')">9</button>
+    <button class="color-op" (click)="chooseOperation('-')">-</button>
+    
+    <button (click)="appendNumber('.')">.</button>
+    <button (click)="appendNumber('0')">0</button>
+    
+    <!-- Botón de igual -->
+    <button class="span-two color-op" (click)="compute()">=</button>
+  </div>
+
+  <!-- SECCIÓN DE HISTORIAL -->
+  <div class="history-panel">
+    <h3>Historial</h3>
+    <div class="history-list">
+      @for (item of historial(); track $index) {
+        <div class="history-item">{{ item }}</div>
+      } @empty {
+        <p>No hay operaciones</p>
+      }
+    </div>
+      @if (historial().length > 0) {
+        <button class="btn-clear-history my-button" (click)="clearHistory()">
+          <span>🗑️</span> Limpiar Historial
+        </button>
+      }
+  </div>
+
+</div>
